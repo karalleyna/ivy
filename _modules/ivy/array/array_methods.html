@@ -76,19 +76,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/container.html">Container</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/container.html">Container</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -259,42 +259,15 @@
 <span class="sd">    ivy.array([0.535, 0.42 ])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.softplus(beta=0.5)</span>
+<span class="sd">    &gt;&gt;&gt; x.softplus(beta=0.5)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    ivy.array([1.22, 1.09])</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([1.31, 2., 2.])</span>
+<span class="sd">    &gt;&gt;&gt; ivy.array([1.31, 2., 2.])</span>
 <span class="sd">    &gt;&gt;&gt; x.softplus(threshold=2)</span>
-<span class="sd">    &gt;&gt;&gt; print(x)</span>
-<span class="sd">    ivy.array([1.31, 2.  , 2.  ])</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span></div>
-
-
-<div class="viewcode-block" id="log_softmax"><a class="viewcode-back" href="../../../functional/ivy/activations/log_softmax/log_softmax_array.html#ivy.array.array_methods.log_softmax">[docs]</a><span class="k">def</span> <span class="nf">log_softmax</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
-    <span class="o">/</span><span class="p">,</span>
-    <span class="o">*</span><span class="p">,</span>
-    <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ivy.Array instance method variant of ivy.log_softmax.</span>
-<span class="sd">    This method simply wraps the function,</span>
-<span class="sd">    and so the docstring for ivy.log_softmax also applies to this method</span>
-<span class="sd">    with minimal changes.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([-1.0, -0.98, 2.3])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.log_softmax()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    ivy.array([-3.37, -3.35, -0.0719])</span>
+<span class="sd">    ivy.array([2.15, 2.63, 2.63])</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.array([2.0, 3.4, -4.2])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.log_softmax(x)</span>
-<span class="sd">    ivy.array([-1.62, -0.221, -7.82 ])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -950,7 +923,7 @@
 <span class="sd">    &gt;&gt;&gt; print(x.can_cast(ivy.float64))</span>
 <span class="sd">    True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">from_</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="dtype"><a class="viewcode-back" href="../../../functional/ivy/data_type/dtype/dtype_array.html#ivy.array.array_methods.dtype">[docs]</a><span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">as_native</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">as_native</span><span class="p">)</span></div>
@@ -3513,7 +3486,6 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    scatter values into an array</span>
-
 <span class="sd">    &gt;&gt;&gt; arr = ivy.array([1,2,3,4,5,6,7,8, 9, 10])</span>
 <span class="sd">    &gt;&gt;&gt; indices = ivy.array([[4], [3], [1], [7]])</span>
 <span class="sd">    &gt;&gt;&gt; updates = ivy.array([9, 10, 11, 12])</span>
@@ -3522,7 +3494,6 @@
 <span class="sd">    ivy.array([ 1, 11,  3, 10,  9,  6,  7, 12,  9, 10])</span>
 
 <span class="sd">    scatter values into an empty array</span>
-
 <span class="sd">    &gt;&gt;&gt; shape = ivy.array([2, 5])</span>
 <span class="sd">    &gt;&gt;&gt; indices = ivy.array([[1,4], [0,3], [1,1], [0,2]])</span>
 <span class="sd">    &gt;&gt;&gt; updates = ivy.array([25, 40, 21, 22])</span>
@@ -3650,8 +3621,8 @@
 <span class="sd">                   [11, 2]],</span>
 <span class="sd">                  [[3, 5],</span>
 <span class="sd">                   [9, 7]]])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.einops_reduce(&#39;a b c -&gt; b c&#39;, &#39;max&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    &gt;&gt;&gt; reduced = x.einops_reduce(&#39;a b c -&gt; b c&#39;, &#39;max&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(reduced)</span>
 <span class="sd">    ivy.array([[ 5,  5],</span>
 <span class="sd">               [11,  7]])</span>
 
@@ -3659,11 +3630,10 @@
 <span class="sd">                    [11, 2, 9]],</span>
 <span class="sd">                   [[3, 5, 7],</span>
 <span class="sd">                    [9, 7, 1]]])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.einops_reduce(&#39;a b c -&gt; a () c&#39;, &#39;min&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    &gt;&gt;&gt; reduced = x.einops_reduce(&#39;a b c -&gt; a () c&#39;, &#39;min&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(reduced)</span>
 <span class="sd">    ivy.array([[[5, 2, 3]],</span>
 <span class="sd">               [[3, 5, 1]]])</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -3701,16 +3671,16 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([5,4])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.einops_repeat(&#39;a -&gt; a c&#39;, c=3)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    &gt;&gt;&gt; repeated = x.einops_repeat(&#39;a -&gt; a c&#39;, c=3)</span>
+<span class="sd">    &gt;&gt;&gt; print(repeated)</span>
 <span class="sd">    ivy.array([[5, 4],</span>
 <span class="sd">               [5, 4],</span>
 <span class="sd">              [5, 4]])</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[5,4],</span>
 <span class="sd">                [2, 3]])</span>
-<span class="sd">    &gt;&gt;&gt; y = x.einops_repeat(&#39;a b -&gt;  a b c&#39;, c=3)</span>
-<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    &gt;&gt;&gt; repeated = x.einops_repeat(&#39;a b -&gt;  a b c&#39;, c=3)</span>
+<span class="sd">    &gt;&gt;&gt; print(repeated)</span>
 <span class="sd">    ivy.array([[[5, 5, 5],</span>
 <span class="sd">                [4, 4, 4]],</span>
 <span class="sd">               [[2, 2, 2],</span>
@@ -5440,24 +5410,6 @@
     <span class="n">rtol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    x = ivy.array([[1., 2.],\</span>
-<span class="sd">              [3., 4.]])</span>
-<span class="sd">    y = pinv(x, None, None)</span>
-<span class="sd">    print(y)</span>
-<span class="sd">    ivy.array([[-2., 1.],\</span>
-<span class="sd">           [1.5, -0.5]])</span>
-
-<span class="sd">    x = ivy.array([[1., 2.],\</span>
-<span class="sd">                  [3., 4.]])</span>
-<span class="sd">    out = ivy.array()</span>
-<span class="sd">    pinv(x, 0, out)</span>
-<span class="sd">    print(out)</span>
-<span class="sd">    ivy.array([[0.0426, 0.0964],\</span>
-<span class="sd">           [0.0605, 0.1368]])</span>
-<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
 
@@ -6161,9 +6113,7 @@
     <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="unstack"><a class="viewcode-back" href="../../../functional/ivy/manipulation/unstack/unstack_array.html#ivy.array.array_methods.unstack">[docs]</a><span class="k">def</span> <span class="nf">unstack</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<div class="viewcode-block" id="unstack"><a class="viewcode-back" href="../../../functional/ivy/manipulation/unstack/unstack_array.html#ivy.array.array_methods.unstack">[docs]</a><span class="k">def</span> <span class="nf">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.unstack. This method simply</span>
 <span class="sd">    wraps the function, and so the docstring for ivy.unstack also applies to</span>
 <span class="sd">    this method with minimal changes.</span>

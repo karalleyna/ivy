@@ -5,10 +5,6 @@ pinv
 
 .. autofunction:: ivy.array.array_methods.pinv
 
-.. autofunction:: ivy.container.container_methods.static_pinv
-
-.. autofunction:: ivy.container.container_methods.pinv
-
 .. list-table:: Device Support
    :widths: 20 20 20 20 20
    :header-rows: 1
@@ -57,6 +53,4 @@ pinv
 
    pinv/pinv_functional.rst
    pinv/pinv_array.rst
-   pinv/pinv_container.rst
-   pinv/static_pinv_container.rst
 
