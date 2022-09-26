@@ -5,9 +5,7 @@ from hypothesis import given, strategies as st
 # local
 import ivy_tests.test_ivy.helpers as helpers
 from ivy_tests.test_ivy.helpers import handle_cmd_line_args
-from ivy_tests.test_ivy.test_functional.test_core.test_linalg import (
-    _get_dtype_and_matrix,
-)
+
 
 # matrix_rank
 @handle_cmd_line_args
