@@ -442,7 +442,7 @@ def test_jax_numpy_cholesky(
         num_arrays=1,
     ),
 )
-def test_jax_slogdet(
+def test_jax_numpy_slogdet(
     *,
     dtype_and_x,
     as_variable,
@@ -555,7 +555,7 @@ def test_jax_numpy_solve(
     keepdims=st.booleans(),
     ord=st.sampled_from([None, np.inf, -np.inf, 1, -1, 2, -2]),
 )
-def test_jax_norm(
+def test_jax_numpy_norm(
     dtype_values_axis,
     keepdims,
     ord,
