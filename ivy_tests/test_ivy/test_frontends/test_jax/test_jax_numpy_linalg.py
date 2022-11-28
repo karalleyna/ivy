@@ -540,53 +540,36 @@ def test_jax_numpy_solve(
     )
 
 
-@st.composite
-def norm_helper(draw):
-    dtype, x = draw(
-        helpers.dtype_and_values(
-            shape=st.shared(helpers.get_shape(min_num_dims=1), key="shape"),
-            available_dtypes=helpers.get_dtypes("valid"),
-            min_num_dims=1,
-            safety_factor_scale="log",
-            large_abs_safety_factor=2,
-        )
-    )
-    axis = draw(
-        helpers.get_axis(
-            shape=st.shared(helpers.get_shape(min_num_dims=1), key="shape"),
-        )
-    )
-    if type(axis) in [tuple, list]:
-        if len(axis) == 2:
-            ord_param = draw(
-                st.sampled_from(["fro", "nuc", 1, 2, -1, -2, np.inf, -np.inf])
-            )
-        else:
-            axis = axis[0]
-            ord_param = draw(st.sampled_from([0, 1, 2, -1, -2, np.inf, -np.inf]))
-    else:
-        ord_param = draw(st.sampled_from([0, 1, 2, -1, -2, np.inf, -np.inf]))
-    keepdims = draw(st.booleans())
-    return dtype, x, ord_param, axis, keepdims
-
-
 # norm
 @handle_frontend_test(
     fn_tree="jax.numpy.linalg.norm",
-    params=norm_helper().filter(lambda s: "bfloat16" not in s[0] or "bool" not in s[0]),
+    dtype_values_axis=helpers.dtype_values_axis(
+        available_dtypes=helpers.get_dtypes("float"),
+        min_num_dims=2,
+        max_num_dims=3,
+        min_dim_size=2,
+        max_dim_size=5,
+        min_axis=-2,
+        max_axis=1,
+    ),
+    keepdims=st.booleans(),
+    ord=st.sampled_from([None, np.inf, -np.inf, 1, -1, 2, -2]),
 )
 def test_jax_norm(
-    *,
-    params,
+    dtype_values_axis,
+    keepdims,
+    ord,
     as_variable,
     num_positional_args,
     native_array,
-    on_device,
-    fn_tree,
     frontend,
+    fn_tree,
+    on_device,
 ):
-    dtype, x, ord_param, axis, keepdims = params
-
+    dtype, x, axis = dtype_values_axis
+    print(dtype, x, axis)
+    if len(np.shape(x)) == 1:
+        axis = None
     helpers.test_frontend_function(
         input_dtypes=dtype,
         as_variable_flags=as_variable,
@@ -597,9 +580,10 @@ def test_jax_norm(
         fn_tree=fn_tree,
         on_device=on_device,
         x=x[0],
-        ord=ord_param,
+        ord=ord,
         axis=axis,
         keepdims=keepdims,
+        atol=1e-1,
     )
 
 
