@@ -1679,7 +1679,7 @@
 
 <div class="viewcode-block" id="SparseArray.to_dense_array"><a class="viewcode-back" href="../../../../functional/ivy/experimental/SparseArray.html#ivy.functional.ivy.experimental.SparseArray.to_dense_array">[docs]</a>    <span class="k">def</span> <span class="nf">to_dense_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">native</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">all_coordinates</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_coo_indices</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coo_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># COO sparse array</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
