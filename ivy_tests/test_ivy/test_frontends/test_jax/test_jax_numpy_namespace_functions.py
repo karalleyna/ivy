@@ -502,39 +502,31 @@ def test_jax_numpy_concat(
     )
 
 
+# mean
 @handle_frontend_test(
     fn_tree="jax.numpy.mean",
-    dtype_x_axis=statistical_dtype_values(function="mean"),
+    dtype_and_x=statistical_dtype_values(function="mean"),
     dtype=helpers.get_dtypes("float", full=False, none=True),
-    where=np_helpers.where(),
     keepdims=st.booleans(),
 )
 def test_jax_numpy_mean(
-    *,
-    dtype_x_axis,
+    dtype_and_x,
     dtype,
     keepdims,
-    where,
-    num_positional_args,
-    with_out,
     as_variable,
+    with_out,
+    num_positional_args,
     native_array,
-    on_device,
-    fn_tree,
     frontend,
+    fn_tree,
+    on_device,
 ):
-    x_dtype, x, axis = dtype_x_axis
+    input_dtype, x, axis = dtype_and_x
     if isinstance(axis, tuple):
         axis = axis[0]
-    where, as_variable, native_array = np_helpers.handle_where_and_array_bools(
-        where=where,
-        input_dtype=x_dtype,
-        as_variable=as_variable,
-        native_array=native_array,
-    )
 
-    np_helpers.test_frontend_function(
-        input_dtypes=x_dtype,
+    helpers.test_frontend_function(
+        input_dtypes=input_dtype,
         as_variable_flags=as_variable,
         with_out=with_out,
         num_positional_args=num_positional_args,
@@ -542,14 +534,13 @@ def test_jax_numpy_mean(
         frontend=frontend,
         fn_tree=fn_tree,
         on_device=on_device,
-        atol=1e-2,
-        rtol=1e-2,
         a=x[0],
         axis=axis,
         dtype=dtype[0],
         out=None,
         keepdims=keepdims,
-        where=where,
+        atol=1e-2,
+        rtol=1e-2,
     )
 
 
@@ -3087,14 +3078,17 @@ def test_jax_numpy_logaddexp(
 @handle_frontend_test(
     fn_tree="jax.numpy.expand_dims",
     dtype_and_x=helpers.dtype_and_values(
-        available_dtypes=helpers.get_dtypes("numeric"),
-        shape=st.shared(helpers.get_shape(), key="expand_dims_axis"),
+        available_dtypes=helpers.get_dtypes("valid"),
+        shape=st.shared(helpers.get_shape(), key="value_shape"),
     ),
     axis=helpers.get_axis(
-        shape=st.shared(helpers.get_shape(), key="expand_dims_axis"),
+        shape=st.shared(helpers.get_shape(), key="value_shape"),
+        min_size=1,
+        max_size=1,
+        force_int=True,
     ),
 )
-def test_jax_expand_dims(
+def test_jax_numpy_expand_dims(
     *,
     dtype_and_x,
     axis,
