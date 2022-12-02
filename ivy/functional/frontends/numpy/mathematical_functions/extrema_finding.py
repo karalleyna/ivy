@@ -37,6 +37,11 @@ def amin(
     initial=None,
     where=True,
 ):
+    if initial is None and where is not None:
+        raise ivy.exceptions.IvyError(
+            "Using a where mask, one has to specify 'initial'."
+        )
+
     where_mask = None
     if initial is not None:
         if ivy.is_array(where):
@@ -76,6 +81,11 @@ def amax(
     initial=None,
     where=True,
 ):
+    if initial is None and where is not None:
+        raise ivy.exceptions.IvyError(
+            "Using a where mask, one has to specify 'initial'."
+        )
+
     where_mask = None
     if initial is not None:
         if ivy.is_array(where):
