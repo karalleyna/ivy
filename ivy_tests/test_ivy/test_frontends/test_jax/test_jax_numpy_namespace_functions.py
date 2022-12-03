@@ -615,8 +615,8 @@ def test_jax_numpy_var(
         out=None,
         ddof=ddof,
         keepdims=keepdims,
-        atol=1e-4,
-        rtol=1e-4,
+        atol=1e-2,
+        rtol=1e-2,
     )
 
 
