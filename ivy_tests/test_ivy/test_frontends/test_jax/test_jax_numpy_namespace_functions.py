@@ -581,7 +581,6 @@ def test_jax_numpy_uint16(
     fn_tree="jax.numpy.var",
     dtype_x_axis=statistical_dtype_values(function="var"),
     dtype=helpers.get_dtypes("float", full=False, none=True),
-    where=np_helpers.where(),
     keepdims=st.booleans(),
 )
 def test_jax_numpy_var(
@@ -589,7 +588,6 @@ def test_jax_numpy_var(
     dtype_x_axis,
     dtype,
     keepdims,
-    where,
     num_positional_args,
     with_out,
     as_variable,
@@ -601,14 +599,8 @@ def test_jax_numpy_var(
     x_dtype, x, axis, ddof = dtype_x_axis
     if isinstance(axis, tuple):
         axis = axis[0]
-    where, as_variable, native_array = np_helpers.handle_where_and_array_bools(
-        where=where,
-        input_dtype=x_dtype,
-        as_variable=as_variable,
-        native_array=native_array,
-    )
 
-    np_helpers.test_frontend_function(
+    helpers.test_frontend_function(
         input_dtypes=x_dtype,
         as_variable_flags=as_variable,
         with_out=with_out,
@@ -623,7 +615,8 @@ def test_jax_numpy_var(
         out=None,
         ddof=ddof,
         keepdims=keepdims,
-        where=where,
+        atol=1e-4,
+        rtol=1e-4,
     )
 
 
