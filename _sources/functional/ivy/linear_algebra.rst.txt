@@ -35,6 +35,7 @@ Linear algebra
    linear_algebra/svd.rst
    linear_algebra/svdvals.rst
    linear_algebra/tensordot.rst
+   linear_algebra/tensorsolve.rst
    linear_algebra/trace.rst
    linear_algebra/vecdot.rst
    linear_algebra/vector_norm.rst
