@@ -319,14 +319,22 @@ Citation
    :maxdepth: -1
    :caption: Framework Classes
 
-   stateful/converters.rst
    stateful/norms.rst
-   stateful/module.rst
-   stateful/optimizers.rst
+   stateful/converters.rst
    stateful/layers.rst
    stateful/activations.rst
+   stateful/optimizers.rst
    stateful/sequential.rst
    stateful/initializers.rst
+   stateful/module.rst
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: -1
+   :caption: Nested array
+
+   nested_array/nested_array.rst
 
 
 .. toctree::
