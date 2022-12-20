@@ -17,7 +17,6 @@ Linear algebra
    linear_algebra/cross.rst
    linear_algebra/det.rst
    linear_algebra/diagonal.rst
-   linear_algebra/eig.rst
    linear_algebra/eigh.rst
    linear_algebra/eigvalsh.rst
    linear_algebra/inner.rst
@@ -35,7 +34,6 @@ Linear algebra
    linear_algebra/svd.rst
    linear_algebra/svdvals.rst
    linear_algebra/tensordot.rst
-   linear_algebra/tensorsolve.rst
    linear_algebra/trace.rst
    linear_algebra/vecdot.rst
    linear_algebra/vector_norm.rst
