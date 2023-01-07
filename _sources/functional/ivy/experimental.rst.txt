@@ -13,10 +13,13 @@ Experimental
    :maxdepth: -1
    :caption: Experimental
 
+   experimental/logit.rst
    experimental/diagflat.rst
    experimental/kron.rst
    experimental/matrix_exp.rst
    experimental/eig.rst
+   experimental/eigvals.rst
+   experimental/adjoint.rst
    experimental/is_ivy_sparse_array.rst
    experimental/is_native_sparse_array.rst
    experimental/native_sparse_array.rst
@@ -60,9 +63,11 @@ Experimental
    experimental/atleast_3d.rst
    experimental/take_along_axis.rst
    experimental/hsplit.rst
+   experimental/broadcast_shapes.rst
    experimental/dirichlet.rst
    experimental/beta.rst
    experimental/gamma.rst
+   experimental/poisson.rst
    experimental/median.rst
    experimental/nanmean.rst
    experimental/unravel_index.rst
@@ -73,6 +78,7 @@ Experimental
    experimental/lcm.rst
    experimental/fmod.rst
    experimental/fmax.rst
+   experimental/fmin.rst
    experimental/trapz.rst
    experimental/float_power.rst
    experimental/exp2.rst
@@ -93,6 +99,7 @@ Experimental
    experimental/nextafter.rst
    experimental/zeta.rst
    experimental/gradient.rst
+   experimental/xlogy.rst
    experimental/SparseArray.rst
    experimental/NativeSparseArray.rst
 
