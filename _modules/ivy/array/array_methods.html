@@ -1633,7 +1633,7 @@
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="n">arrays</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
-    <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">sparse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">indexing</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;xy&quot;</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1661,7 +1661,7 @@
 <span class="sd">        input arrays. Each returned array must have rank ``N``. For ``N``</span>
 <span class="sd">        one-dimensional arrays having lengths ``Ni = len(xi)``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">([</span><span class="bp">self</span><span class="p">]</span> <span class="o">+</span> <span class="n">arrays</span><span class="p">),</span> <span class="n">sparse</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="n">indexing</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">([</span><span class="bp">self</span><span class="p">]</span> <span class="o">+</span> <span class="n">arrays</span><span class="p">),</span> <span class="n">sparse</span><span class="o">=</span><span class="n">sparse</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="n">indexing</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="from_dlpack"><a class="viewcode-back" href="../../../functional/ivy/creation/from_dlpack/from_dlpack_array.html#ivy.array.array_methods.from_dlpack">[docs]</a><span class="k">def</span> <span class="nf">from_dlpack</span><span class="p">(</span>
@@ -6837,6 +6837,49 @@
         <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">,</span>
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="corrcoef"><a class="viewcode-back" href="../../../functional/ivy/experimental/corrcoef/corrcoef_array.html#ivy.array.array_methods.corrcoef">[docs]</a><span class="k">def</span> <span class="nf">corrcoef</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">rowvar</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.corrcoef. This method simply</span>
+<span class="sd">    wraps the function, and so the docstring for ivy.corrcoef also applies to</span>
+<span class="sd">    this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    y</span>
+<span class="sd">        An additional input array.</span>
+<span class="sd">        `y` has the same shape as `x`.</span>
+<span class="sd">    rowvar</span>
+<span class="sd">        If rowvar is True (default), then each row represents a variable, with</span>
+<span class="sd">        observations in the columns. Otherwise, the relationship is transposed:</span>
+<span class="sd">        each column represents a variable, while the rows contain observations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        The corrcoef of the array elements.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; a = ivy.array([[0., 1., 2.], [2., 1., 0.]])</span>
+<span class="sd">    &gt;&gt;&gt; a.corrcoef()</span>
+<span class="sd">        ivy.array([[ 1., -1.],</span>
+<span class="sd">                   [-1.,  1.]])</span>
+<span class="sd">    &gt;&gt;&gt; a.corrcoef(rowvar=False)</span>
+<span class="sd">        ivy.array([[ 1., nan, -1.],</span>
+<span class="sd">                   [nan, nan, nan],</span>
+<span class="sd">                   [-1., nan,  1.]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="n">rowvar</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="isin"><a class="viewcode-back" href="../../../functional/ivy/experimental/isin/isin_array.html#ivy.array.array_methods.isin">[docs]</a><span class="k">def</span> <span class="nf">isin</span><span class="p">(</span>
