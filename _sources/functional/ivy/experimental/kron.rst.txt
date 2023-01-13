@@ -5,9 +5,9 @@ kron
 
 .. autofunction:: ivy.array.array_methods.kron
 
-.. autofunction:: ivy.container.container_methods.static_kron
-
 .. autofunction:: ivy.container.container_methods.kron
+
+.. autofunction:: ivy.container.container_methods.static_kron
 |
 | **Supported Frameworks:**
 
