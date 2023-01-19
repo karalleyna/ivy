@@ -13,13 +13,16 @@ Experimental
    :maxdepth: -1
    :caption: Experimental
 
-   experimental/is_native_dtype.rst
-   experimental/l2_normalize.rst
-   experimental/median.rst
-   experimental/nanmean.rst
-   experimental/unravel_index.rst
-   experimental/quantile.rst
-   experimental/corrcoef.rst
+   experimental/msort.rst
+   experimental/dirichlet.rst
+   experimental/beta.rst
+   experimental/gamma.rst
+   experimental/poisson.rst
+   experimental/is_ivy_sparse_array.rst
+   experimental/is_native_sparse_array.rst
+   experimental/native_sparse_array.rst
+   experimental/native_sparse_array_to_indices_values_and_shape.rst
+   experimental/binary_cross_entropy_with_logits.rst
    experimental/flatten.rst
    experimental/moveaxis.rst
    experimental/ndenumerate.rst
@@ -42,7 +45,38 @@ Experimental
    experimental/take_along_axis.rst
    experimental/hsplit.rst
    experimental/broadcast_shapes.rst
+   experimental/l2_normalize.rst
    experimental/logit.rst
+   experimental/median.rst
+   experimental/nanmean.rst
+   experimental/unravel_index.rst
+   experimental/quantile.rst
+   experimental/corrcoef.rst
+   experimental/max_pool1d.rst
+   experimental/max_pool2d.rst
+   experimental/max_pool3d.rst
+   experimental/avg_pool1d.rst
+   experimental/avg_pool2d.rst
+   experimental/avg_pool3d.rst
+   experimental/dct.rst
+   experimental/fft.rst
+   experimental/dropout1d.rst
+   experimental/ifft.rst
+   experimental/embedding.rst
+   experimental/is_native_dtype.rst
+   experimental/diagflat.rst
+   experimental/kron.rst
+   experimental/matrix_exp.rst
+   experimental/eig.rst
+   experimental/eigvals.rst
+   experimental/adjoint.rst
+   experimental/triu_indices.rst
+   experimental/vorbis_window.rst
+   experimental/hann_window.rst
+   experimental/kaiser_window.rst
+   experimental/kaiser_bessel_derived_window.rst
+   experimental/hamming_window.rst
+   experimental/tril_indices.rst
    experimental/sinc.rst
    experimental/lcm.rst
    experimental/fmod.rst
@@ -61,6 +95,7 @@ Experimental
    experimental/nan_to_num.rst
    experimental/logaddexp2.rst
    experimental/signbit.rst
+   experimental/hypot.rst
    experimental/diff.rst
    experimental/allclose.rst
    experimental/fix.rst
@@ -69,41 +104,7 @@ Experimental
    experimental/gradient.rst
    experimental/xlogy.rst
    experimental/real.rst
-   experimental/binary_cross_entropy_with_logits.rst
-   experimental/is_ivy_sparse_array.rst
-   experimental/is_native_sparse_array.rst
-   experimental/native_sparse_array.rst
-   experimental/native_sparse_array_to_indices_values_and_shape.rst
-   experimental/max_pool1d.rst
-   experimental/max_pool2d.rst
-   experimental/max_pool3d.rst
-   experimental/avg_pool1d.rst
-   experimental/avg_pool2d.rst
-   experimental/avg_pool3d.rst
-   experimental/dct.rst
-   experimental/fft.rst
-   experimental/dropout1d.rst
-   experimental/ifft.rst
-   experimental/embedding.rst
-   experimental/dirichlet.rst
-   experimental/beta.rst
-   experimental/gamma.rst
-   experimental/poisson.rst
    experimental/isin.rst
-   experimental/triu_indices.rst
-   experimental/vorbis_window.rst
-   experimental/hann_window.rst
-   experimental/kaiser_window.rst
-   experimental/kaiser_bessel_derived_window.rst
-   experimental/hamming_window.rst
-   experimental/tril_indices.rst
-   experimental/msort.rst
-   experimental/diagflat.rst
-   experimental/kron.rst
-   experimental/matrix_exp.rst
-   experimental/eig.rst
-   experimental/eigvals.rst
-   experimental/adjoint.rst
    experimental/SparseArray.rst
    experimental/NativeSparseArray.rst
 
