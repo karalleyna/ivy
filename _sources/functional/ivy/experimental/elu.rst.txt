@@ -5,9 +5,9 @@ elu
 
 .. autofunction:: ivy.array.array_methods.elu
 
-.. autofunction:: ivy.container.container_methods.static_elu
-
 .. autofunction:: ivy.container.container_methods.elu
+
+.. autofunction:: ivy.container.container_methods.static_elu
 |
 | **Supported Frameworks:**
 

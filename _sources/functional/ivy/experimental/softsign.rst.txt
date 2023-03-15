@@ -5,9 +5,9 @@ softsign
 
 .. autofunction:: ivy.array.array_methods.softsign
 
-.. autofunction:: ivy.container.container_methods.softsign
-
 .. autofunction:: ivy.container.container_methods.static_softsign
+
+.. autofunction:: ivy.container.container_methods.softsign
 |
 | **Supported Frameworks:**
 

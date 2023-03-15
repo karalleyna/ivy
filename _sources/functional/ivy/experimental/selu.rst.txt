@@ -5,9 +5,9 @@ selu
 
 .. autofunction:: ivy.array.array_methods.selu
 
-.. autofunction:: ivy.container.container_methods.selu
-
 .. autofunction:: ivy.container.container_methods.static_selu
+
+.. autofunction:: ivy.container.container_methods.selu
 |
 | **Supported Frameworks:**
 
