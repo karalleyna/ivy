@@ -788,7 +788,431 @@
             <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
             <span class="n">training</span><span class="o">=</span><span class="n">training</span><span class="p">,</span>
             <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.sigmoid"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.sigmoid">[docs]</a>    <span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.sigmoid.</span>
+
+<span class="sd">        This method simply wraps the function, and so the docstring for ivy.sigmoid also</span>
+<span class="sd">        applies to this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            Input array</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array for writing the result to. It must have the same shape</span>
+<span class="sd">            the input broadcast to default: None</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the sigmoid activation function applied element-wise.</span>
+
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-1., 1., 2.])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.sigmoid()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([0.269, 0.731, 0.881])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.hard_tanh"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.hard_tanh">[docs]</a>    <span class="k">def</span> <span class="nf">hard_tanh</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.hard_tanh.</span>
+
+<span class="sd">        This method simply wraps the function, and so the docstring for ivy.hard_tanh</span>
+<span class="sd">        also applies to this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            Input array</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array for writing the result to. It must have the same shape</span>
+<span class="sd">            the input broadcast to default: None</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the hard_tanh activation function applied element-wise.</span>
+
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-1. ,  1. ,  0.1])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.hard_tanh()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-1. ,  1. ,  0.1])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">hard_tanh</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.softplus"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.softplus">[docs]</a>    <span class="k">def</span> <span class="nf">softplus</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">beta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.softplus. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.softplus also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        beta</span>
+<span class="sd">            the beta parameter of the softplus function.</span>
+<span class="sd">        threshold</span>
+<span class="sd">            the threshold parameter of the softplus function.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the softplus activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.softplus()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([0.535,0.42])</span>
+
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.softplus(beta=0.5)</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([1.22, 1.09])</span>
+
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([1.31, 2., 2.])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.softplus(threshold=2, out=x)</span>
+<span class="sd">        &gt;&gt;&gt; print(x)</span>
+<span class="sd">        ivy.array([1.55, 2.13, 2.13])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">softplus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.softsign"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.softsign">[docs]</a>    <span class="k">def</span> <span class="nf">softsign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.softsign. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.softsign also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the softsign activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.softsign()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.25711316, -0.39360863])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">softsign</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.silu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.silu">[docs]</a>    <span class="k">def</span> <span class="nf">silu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.silu. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.silu also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the silu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.silu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.14339909, -0.22276618])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">silu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.hard_silu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.hard_silu">[docs]</a>    <span class="k">def</span> <span class="nf">hard_silu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.hard_silu. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.hard_silu also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the hard_silu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.hard_silu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.1530858 , -0.25432822])</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">hard_silu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.log_sigmoid"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.log_sigmoid">[docs]</a>    <span class="k">def</span> <span class="nf">log_sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.log_sigmoid. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.log_sigmoid also applies</span>
+<span class="sd">        to this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the log_sigmoid activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.log_sigmoid()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.88109624, -1.0694641 ])</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">log_sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.leaky_relu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.leaky_relu">[docs]</a>    <span class="k">def</span> <span class="nf">leaky_relu</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.leaky_relu. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.leaky_relu also applies to this</span>
+<span class="sd">        method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        alpha</span>
+<span class="sd">            the slope of the negative section.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the leaky relu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([0.39, -0.85])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.leaky_relu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.51704043, -1.205865  ])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">leaky_relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.elu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.elu">[docs]</a>    <span class="k">def</span> <span class="nf">elu</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.elu. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.elu also applies to this</span>
+<span class="sd">        method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        alpha</span>
+<span class="sd">            the slope of the negative section.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the elu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([0.39, -0.85])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.elu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([ 0.39     , -0.5725851])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">elu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.celu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.celu">[docs]</a>    <span class="k">def</span> <span class="nf">celu</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.celu. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.celu also applies to this</span>
+<span class="sd">        method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        alpha</span>
+<span class="sd">            the slope of the negative section.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the lcelu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([0.39, -0.85])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.celu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([ 0.39     , -0.5725851])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">celu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.hard_sigmoid"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.hard_sigmoid">[docs]</a>    <span class="k">def</span> <span class="nf">hard_sigmoid</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.hard_sigmoid. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.hard_sigmoid also applies to this</span>
+<span class="sd">        method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        alpha</span>
+<span class="sd">            the slope of the negative section.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the hard_sigmoid activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([0.39, -0.85])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.hard_sigmoid()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([0.565     , 0.35833335])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">hard_sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.selu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.selu">[docs]</a>    <span class="k">def</span> <span class="nf">selu</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.selu. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.selu also applies to this</span>
+<span class="sd">        method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the selu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([0.39, -0.85])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.selu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([ 0.40977338, -1.0066615 ])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">selu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithActivationsExperimental.glu"><a class="viewcode-back" href="../../../../data_classes/array/experimental.html#ivy.array.experimental._ArrayWithActivationsExperimental.glu">[docs]</a>    <span class="k">def</span> <span class="nf">glu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.glu. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.glu also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            input array.</span>
+<span class="sd">        axis</span>
+<span class="sd">            the axis along which the split should be computed</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array with the glu activation function applied element-wise.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([-0.3461, -0.6491])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.glu()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([-0.11877888])</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">glu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div></div>
 </pre></div>
 
             </article>

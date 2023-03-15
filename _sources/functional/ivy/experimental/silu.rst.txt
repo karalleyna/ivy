@@ -1,0 +1,38 @@
+silu
+====
+
+.. autofunction:: ivy.functional.ivy.experimental.silu
+
+.. autofunction:: ivy.array.array_methods.silu
+
+.. autofunction:: ivy.container.container_methods.static_silu
+
+.. autofunction:: ivy.container.container_methods.silu
+|
+| **Supported Frameworks:**
+
+|jax_logo| |tf_logo| |pytorch_logo| |numpy_logo|
+
+.. |jax_logo| image:: ../../../logos/supported/jax_logo.png
+   :target: https://jax.readthedocs.io
+
+.. |tf_logo| image:: ../../../logos/supported/tensorflow_logo.png
+   :target: https://www.tensorflow.org
+
+.. |pytorch_logo| image:: ../../../logos/supported/pytorch_logo.png
+   :target: https://pytorch.org
+
+.. |numpy_logo| image:: ../../../logos/supported/numpy_logo.png
+   :target: https://numpy.org
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: -1
+   :caption: silu
+
+   silu/silu_functional.rst
+   silu/silu_array.rst
+   silu/silu_container.rst
+   silu/static_silu_container.rst
+
