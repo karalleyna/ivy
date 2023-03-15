@@ -130,19 +130,6 @@ Experimental
    experimental/thresholded_relu.rst
    experimental/relu6.rst
    experimental/batch_norm.rst
-   experimental/sigmoid.rst
-   experimental/hard_sigmoid.rst
-   experimental/selu.rst
-   experimental/hard_tanh.rst
-   experimental/log_sigmoid.rst
-   experimental/softplus.rst
-   experimental/softsign.rst
-   experimental/silu.rst
-   experimental/hard_silu.rst
-   experimental/leaky_relu.rst
-   experimental/elu.rst
-   experimental/celu.rst
-   experimental/glu.rst
    experimental/binary_cross_entropy_with_logits.rst
    experimental/SparseArray.rst
    experimental/NativeSparseArray.rst

@@ -18,17 +18,4 @@ Activations
    activations/thresholded_relu.rst
    activations/relu6.rst
    activations/batch_norm.rst
-   activations/sigmoid.rst
-   activations/hard_sigmoid.rst
-   activations/selu.rst
-   activations/hard_tanh.rst
-   activations/log_sigmoid.rst
-   activations/softplus.rst
-   activations/softsign.rst
-   activations/silu.rst
-   activations/hard_silu.rst
-   activations/leaky_relu.rst
-   activations/elu.rst
-   activations/celu.rst
-   activations/glu.rst
 
