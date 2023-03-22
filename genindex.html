@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -36,13 +37,12 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="shortcut icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -532,6 +532,8 @@ document.write(`
         <li><a href="docs/functional/ivy/ivy.functional.ivy.device.html#ivy.functional.ivy.device.Profiler.__init__">(ivy.functional.ivy.device.Profiler method)</a>
 </li>
         <li><a href="docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.SparseArray.__init__">(ivy.functional.ivy.experimental.SparseArray method)</a>
+</li>
+        <li><a href="docs/functional/ivy/ivy.functional.ivy.general.html#ivy.functional.ivy.general.ArrayMode.__init__">(ivy.functional.ivy.general.ArrayMode method)</a>
 </li>
         <li><a href="docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.functional.ivy.gradients.GradientTracking.__init__">(ivy.functional.ivy.gradients.GradientTracking method)</a>
 </li>
@@ -1286,6 +1288,8 @@ document.write(`
         <li><a href="docs/data_classes/container/ivy.data_classes.container.general.html#ivy.data_classes.container.general._ContainerWithGeneral.array_equal">(ivy.data_classes.container.general._ContainerWithGeneral method)</a>
 </li>
       </ul></li>
+      <li><a href="docs/functional/ivy/ivy.functional.ivy.general.html#ivy.functional.ivy.general.ArrayMode">ArrayMode (class in ivy.functional.ivy.general)</a>
+</li>
       <li><a href="docs/testing/helpers/ivy_tests.test_ivy.helpers.test_parameter_flags.html#ivy_tests.test_ivy.helpers.test_parameter_flags.as_cont">as_cont() (in module ivy_tests.test_ivy.helpers.test_parameter_flags)</a>
 </li>
       <li><a href="docs/functional/ivy/ivy.functional.ivy.device.html#ivy.functional.ivy.device.as_ivy_dev">as_ivy_dev() (in module ivy.functional.ivy.device)</a>
@@ -8076,7 +8080,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
     <br/>
   </p>
 </div>
