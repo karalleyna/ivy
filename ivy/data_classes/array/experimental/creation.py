@@ -54,3 +54,32 @@ class _ArrayWithCreationExperimental(abc.ABC):
                     0., 1., 0.]])
         """
         return ivy.eye_like(self._data, k=k, dtype=dtype, device=device, out=out)
+
+    def trilu(self: ivy.Array, /, *, k: int = 0, out: Optional[ivy.Array] = None):
+        """
+        ivy.Array instance method variant of ivy.trilu. This method simply wraps the
+        function, and so the docstring for ivy.trilu also applies to this method with
+        minimal changes.
+
+        Parameters
+        ----------
+        self
+            input array having shape (..., M, N) and whose innermost two dimensions form
+            MxN matrices.    *,
+        k
+            diagonal below which to zero elements. If k = 0, the diagonal is the main
+            diagonal. If k < 0, the diagonal is below the main diagonal. If k > 0, the
+            diagonal is above the main diagonal. Default: ``0``.
+        out
+            optional output array, for writing the result to. It must have a shape that
+            the inputs broadcast to.
+
+        Returns
+        -------
+        ret
+            an array containing the upper triangular part(s). The returned array must
+            have the same shape and data type as ``self``. All elements below the
+            specified diagonal k must be zeroed. The returned array should be allocated
+            on the same device as ``self``.
+        """
+        return ivy.trilu(self._data, k=k, out=out)

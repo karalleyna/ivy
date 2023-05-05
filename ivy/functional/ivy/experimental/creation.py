@@ -1,7 +1,7 @@
 # global
 from __future__ import annotations
 from math import sqrt, pi, cos
-from typing import Union, Tuple, Optional
+from typing import List, Union, Tuple, Optional
 
 # local
 import ivy
@@ -647,3 +647,41 @@ def frombuffer(
         count=count,
         offset=offset,
     )
+
+
+@outputs_to_ivy_arrays
+@handle_nestable
+def trilu(
+    x: Union[ivy.Array, ivy.NativeArray],
+    /,
+    *,
+    k: int = 0,
+    out: Optional[ivy.Array] = None,
+) -> ivy.Array:
+    """
+    Returns the upper or lower triangular component of the tensor(s) in the presence of
+    a 2-D matrix or batches of 2-D matrices.
+
+    Parameters
+    ----------
+    x
+        input array having shape (..., M, N) and whose innermost two dimensions form
+        MxN matrices.    *,
+    k
+        diagonal below which to zero elements. If k = 0, the diagonal is the main
+        diagonal. If k < 0, the diagonal is below the main diagonal. If k > 0, the
+        diagonal is above the main diagonal. Default: ``0``.
+    out
+        optional output array, for writing the result to. It must have a shape that
+        the inputs broadcast to.
+
+    Returns
+    -------
+    ret
+        an array containing the upper triangular part(s). The returned array must
+        have the same shape and data type as ``self``. All elements below the
+        specified diagonal k must be zeroed. The returned array should be allocated
+        on the same device as ``self``.
+
+    """
+    return ivy.triu(x, k=k, out=out)

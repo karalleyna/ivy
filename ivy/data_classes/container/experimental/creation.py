@@ -976,3 +976,116 @@ class _ContainerWithCreationExperimental(ContainerBase):
             prune_unapplied=prune_unapplied,
             map_sequences=map_sequences,
         )
+
+    @staticmethod
+    def _static_trilu(
+        x: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        /,
+        key_chains: Optional[Union[List[str], Dict[str, str]]] = None,
+        to_apply: bool = True,
+        prune_unapplied: bool = False,
+        map_sequences: bool = False,
+        *,
+        k: int = 0,
+        out: Optional[ivy.Container] = None,
+    ) -> ivy.Container:
+        """
+        ivy.Container static method variant of ivy.trilu. This method simply wraps
+        the function, and so the docstring for ivy.trilu also applies to this
+        method with minimal changes.
+
+        Parameters
+        ----------
+        self
+            input container whose leaves have shape (..., M, N) with two dimensions form
+            MxN matrices.
+        k
+            diagonal below which to zero elements. If k = 0, the diagonal is the main
+            diagonal. If k < 0, the diagonal is below the main diagonal. If k > 0, the
+            diagonal is above the main diagonal. Default: ``0``.
+        out
+            optional output container, for writing the result to. It must have a shape that
+            the inputs broadcast to.
+        key_chains
+            The key-chains to apply or not apply the method to. Default is ``None``.
+        to_apply
+            If True, the method will be applied to key_chains, otherwise key_chains will
+            be skipped. Default is ``True``.
+        prune_unapplied
+            Whether to prune key_chains for which the function was not applied. Default
+            is False.
+        map_sequences
+            Whether to also map method to sequences (lists, tuples).
+            Default is ``False``.
+
+        Returns
+        -------
+        ret
+            a container containing the upper triangular part(s).
+        """
+
+        return ContainerBase.cont_multi_map_in_function(
+            "trilu",
+            x,
+            key_chains=key_chains,
+            to_apply=to_apply,
+            prune_unapplied=prune_unapplied,
+            map_sequences=map_sequences,
+            k=k,
+            out=out,
+        )
+
+    def trilu(
+        self: ivy.Container,
+        /,
+        key_chains: Optional[Union[List[str], Dict[str, str]]] = None,
+        to_apply: bool = True,
+        prune_unapplied: bool = False,
+        map_sequences: bool = False,
+        *,
+        k: int = 0,
+        out: Optional[ivy.Container] = None,
+    ) -> ivy.Container:
+        """
+        ivy.Container instance method variant of ivy.trilu. This method simply
+        wraps the function, and so the docstring for ivy.trilu also applies to this
+        method with minimal changes.
+
+        Parameters
+        ----------
+        self
+            input container whose leaves have shape (..., M, N) with two dimensions form
+            MxN matrices.
+        k
+            diagonal below which to zero elements. If k = 0, the diagonal is the main
+            diagonal. If k < 0, the diagonal is below the main diagonal. If k > 0, the
+            diagonal is above the main diagonal. Default: ``0``.
+        out
+            optional output container, for writing the result to. It must have a shape
+            that the inputs broadcast to.
+        key_chains
+            The key-chains to apply or not apply the method to. Default is ``None``.
+        to_apply
+            If True, the method will be applied to key_chains, otherwise key_chains will
+            be skipped. Default is ``True``.
+        prune_unapplied
+            Whether to prune key_chains for which the function was not applied. Default
+            is False.
+        map_sequences
+            Whether to also map method to sequences (lists, tuples).
+            Default is ``False``.
+
+        Returns
+        -------
+        ret
+            a container containing the upper triangular part(s).
+        """
+        return self._static_trilu(
+            self,
+            key_chains=key_chains,
+            to_apply=to_apply,
+            prune_unapplied=prune_unapplied,
+            map_sequences=map_sequences,
+            k=k,
+            out=out,
+        )
